@@ -1,0 +1,392 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.clearfix{
+  clear: both;
+}
+
+.react-resizable-handle {
+  z-index: 1000;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  bottom: 0px;
+  right: 0px;
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: se-resize;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0.6);
+}
+.react-resizable {
+  position: relative;
+  display: inline-block;
+}
+.editor {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+img.active {
+  box-shadow: 0 0 0 2px blue;
+}
+
+blockquote {
+  border-left: 2px solid #ddd;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 10px;
+  color: #aaa;
+  font-style: italic;
+}
+
+blockquote[dir="rtl"] {
+  border-left: none;
+  padding-left: 0;
+  padding-right: 10px;
+  border-right: 2px solid #ddd;
+}
+.material-icons {
+  font-size: 18px;
+  vertical-align: text-bottom;
+}
+.editor > * > * + * {
+  margin-top: 1em;
+}
+
+.menu > * {
+  display: inline-block;
+}
+
+.menu > * + * {
+  margin-left: 15px;
+}
+
+.button {
+  color: #ccc;
+  cursor: pointer;
+}
+
+.button[data-active="true"] {
+  color: black;
+}
+
+
+.hover-menu {
+  padding: 8px 7px 6px;
+  position: absolute;
+  z-index: 1;
+  top: -10000px;
+  left: -10000px;
+  margin-top: -6px;
+  opacity: 0;
+  background-color: transparent;
+  border-radius: 4px;
+  transition: opacity .75s;
+  color: #222222;
+}
+
+.hover-menu .button {
+  color: #aaa;
+}
+
+.hover-menu .button[data-active="true"] {
+  color: #fff;
+}
+
+.editor .lan {
+  background-color: #2d2d2d;
+  margin: 0 15px;
+  clear: both;
+  overflow-x: auto;
+  position: relative;
+  border-radius: 5px;
+}
+.editor .lan code{
+  color: white;
+  font-size: 1.4em;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  padding: 20px;
+  display: block;
+}
+.editor .lan:before {
+  color: white;
+  font-size: 1.6em;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.editor .lan.javascript:before {
+  content: 'Js';
+}
+.editor .lan.html:before {
+  content: 'HTML';
+}
+.editor .lan.css:before {
+  content: 'css';
+}
+.editor code[class*="language-"],
+.editor pre[class*="language-"] {
+  color: #eee;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+  font-size: 1.5em;
+}
+
+/* Code blocks */
+.editor pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #2d2d2d;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #aaa;
+}
+
+.token.punctuation {
+  color: #eee;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #e2777a;
+}
+
+.token.function-name {
+  color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: green;
+}
+.twitter-tweet {
+  margin: 15px auto;
+}
+.embed-responsive {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+.embed-responsive::before {
+  display: block;
+  content: "";
+}
+
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.embed-responsive-21by9::before {
+  padding-top: 42.857143%;
+}
+
+.embed-responsive-16by9::before {
+  padding-top: 56.25%;
+}
+
+.embed-responsive-4by3::before {
+  padding-top: 75%;
+}
+
+.embed-responsive-1by1::before {
+  padding-top: 100%;
+}
+.button-toggle {
+  cursor: pointer;
+  color: #222222;
+}
+
+.brown {
+  color: #AAAAAA;
+}
+
+.slate-bulleted-list{
+  display: block;
+  list-style-type: disc;
+  padding-left: 40px;
+}
+.slate-bulleted-list li {
+  display: list-item;
+}
+.slate-numbered-list{
+  display: block;
+  list-style-type: decimal;
+  padding-left: 40px;
+}
+.slate-numbered-list li {
+  display: list-item;
+}
+.slate-numbered-list li [dir="rtl"] {
+  text-align: right;
+}
+.slate-block-quote {
+  padding: 15px 20px;
+  border-left: 3px solid gray;
+}
+.editor {
+  padding: 20px;
+  margin: 40px;
+
+
+}
+.editor p,
+.editor blockquote,
+.editor ul,
+.editor ol{
+  font-size: 1.4em;
+}
+.editor h1 {
+  font-size: 1.8em;
+}
+.editor h2 {
+  font-size: 1.6em;
+}
+.editor-inline-popover {
+  min-width: 400px;
+  min-height: 52px;
+}
+.editor {
+  position: relative;
+}
+.editor-add-menu-container {
+  margin-top: 25px;
+  background-color: transparent;
+}
+.rotate-45 {
+  transform: rotate(45deg);
+}
+
+.editor-add-menu, .editor-add-btn {
+  transition: all 0.1s linear;
+
+}
+.editor-add-menu button {
+  margin: 0 2px;
+}
+.open-add-menu {
+  transform:translateX(0px) scale(1);
+  opacity: 1;
+  margin-left: 20px;
+}
+.close-add-menu {
+  opacity: 0;
+  margin-left: 0px;
+  transform: scale(0);
+
+}
+.editor-image-active {
+  cursor: default;
+  border-radius: 2px;
+  box-shadow: 0 0 0 3px #D2E3F7;
+}
+.node-align-left {
+  text-align: left;
+}
+.node-align-center {
+  text-align: center;
+}
+.node-align-right {
+  text-align: right;
+}
